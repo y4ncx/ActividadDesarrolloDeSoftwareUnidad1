@@ -1,0 +1,57 @@
+@startuml
+
+
+Alumnos "*" -- "1" Grupos
+Alumnos "1" -- "1" Tribunales
+Alumnos "1" -- "1" Trabajo_fin_carrera
+Profesores "*" -- "1" Trabajo_fin_carrera
+Trabajo_fin_carrera "1" -- "1" Tribunales
+
+
+
+
+Class Profesores{
++id
++nombre_completo
++domicilio
+
+}
+
+Class Alumnos{
++dni
++nombre_completo
++num_matricula
+
+}
+
+Class Trabajo_fin_carrera{
++num_orden
++tema
++fecha_inicio
++alumo_realiza
++proofesor_dirige
+
+}
+
+
+Class Tribunales{
++num_tribunal
++lugar_exammen
++cantidad_profesores
++alumno-presente
++tfc_defendido
++fecha_defensa
+
+}
+
+Class Grupos{
++num_grupo
++nombre_grupo
++num_componentes
++fecha_incorporacion
+
+}
+
+
+
+@enduml
